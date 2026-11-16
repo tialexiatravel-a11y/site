@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Marca Alexia Travel">
+  <circle cx="32" cy="32" r="29" fill="#17324d"/>
+  <circle cx="32" cy="32" r="22.5" fill="none" stroke="#e9dfd0" stroke-width="1.2"/>
+  <path d="M32 11.5 36.4 28l16.1 4-16.1 4.1L32 52.5l-4.2-16.4L11.5 32l16.3-4.1z" fill="#c98b5b"/>
+  <circle cx="32" cy="32" r="4" fill="#fffefa"/>
+  <circle cx="32" cy="11.5" r="1.2" fill="#fffefa"/>
+</svg>

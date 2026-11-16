@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#17324d" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="description" content="Área interna da equipe Alexia Travel para organizar atendimentos de viagem." />
+  <title>Atendimento | Alexia Travel</title>
+  <link rel="icon" type="image/svg+xml" href="logo.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="atendimento.css" />
+  <script type="module" src="atendimento.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Pular para o conteúdo</a>
+  <header class="app-header">
+    <a class="brand" href="/" aria-label="Alexia Travel — voltar à página pública">
+      <img class="brand-mark" src="logo.svg" width="44" height="44" alt="" />
+      <span class="brand-copy"><strong>Alexia Travel</strong><span>Atendimento</span></span>
+    </a>
+    <div id="header-actions" class="header-actions" hidden>
+      <span id="signed-in-email" class="signed-in-email"></span>
+      <button id="sign-out-button" class="button button-quiet" type="button">Sair</button>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-shell">
+    <section id="login-screen" class="auth-screen" aria-labelledby="login-title">
+      <div class="auth-card">
+        <p class="eyebrow">ÁREA DA EQUIPE</p>
+        <h1 id="login-title">Um próximo passo para cada viagem.</h1>
+        <p class="auth-intro">Entre com a conta individual autorizada pela Alexia Travel para organizar os pedidos de atendimento.</p>
+        <form id="login-form" class="form-stack">
+          <label for="login-email">E-mail</label>
+          <input id="login-email" name="email" type="email" autocomplete="username" inputmode="email" required maxlength="254" />
+          <label for="login-password">Senha</label>
+          <input id="login-password" name="password" type="password" autocomplete="current-password" required minlength="8" />
+          <button id="login-button" class="button button-primary button-wide" type="submit">Entrar no atendimento</button>
+        </form>
+        <button id="show-recovery-button" class="text-button" type="button">Esqueci minha senha</button>
+        <p id="login-message" class="message" role="status" aria-live="polite" hidden></p>
+        <div class="auth-footnote"><span class="route-dot" aria-hidden="true"></span><span>Acesso individual e restrito à equipe autorizada.</span></div>
+      </div>
+      <a class="public-link" href="/">Voltar ao site Alexia Travel</a>
+    </section>
+
+    <section id="recovery-screen" class="auth-screen" aria-labelledby="recovery-title" hidden>
+      <div class="auth-card">
+        <p class="eyebrow">RECUPERAÇÃO DE ACESSO</p>
+        <h1 id="recovery-title">Vamos recuperar seu acesso.</h1>
+        <p id="recovery-help" class="auth-intro">Informe o e-mail da sua conta autorizada para receber as instruções de redefinição.</p>
+        <form id="recovery-request-form" class="form-stack">
+          <label for="recovery-email">E-mail</label>
+          <input id="recovery-email" name="email" type="email" autocomplete="email" inputmode="email" required maxlength="254" />
+          <button id="recovery-button" class="button button-primary button-wide" type="submit">Enviar instruções</button>
+        </form>
+        <form id="password-update-form" class="form-stack" hidden>
+          <label for="new-password">Nova senha</label>
+          <input id="new-password" name="password" type="password" autocomplete="new-password" required minlength="8" />
+          <label for="confirm-password">Confirme a nova senha</label>
+          <input id="confirm-password" name="confirm-password" type="password" autocomplete="new-password" required minlength="8" />
+          <button id="password-update-button" class="button button-primary button-wide" type="submit">Salvar nova senha</button>
+        </form>
+        <button id="back-to-login-button" class="text-button" type="button">Voltar ao login</button>
+        <p id="recovery-message" class="message" role="status" aria-live="polite" hidden></p>
+      </div>
+      <a class="public-link" href="/">Voltar ao site Alexia Travel</a>
+    </section>
+
+    <section id="dashboard-screen" class="dashboard-screen" aria-labelledby="dashboard-title" hidden>
+      <div class="dashboard-heading">
+        <div>
+          <p class="eyebrow">CADA PEDIDO, UM PRÓXIMO PASSO</p>
+          <h1 id="dashboard-title">Atendimentos</h1>
+          <p class="dashboard-subtitle">Organize os contatos recebidos e acompanhe o retorno da equipe.</p>
+        </div>
+        <button id="new-request-button" class="button button-primary" type="button"><span aria-hidden="true">＋</span> Novo atendimento</button>
+      </div>
+
+      <div class="workspace-toolbar">
+        <label class="search-field" for="request-search">
+          <span class="search-icon" aria-hidden="true">⌕</span>
+          <span class="sr-only">Buscar na página atual</span>
+          <input id="request-search" type="search" placeholder="Buscar nome, telefone ou destino" autocomplete="off" />
+        </label>
+        <label class="filter-field" for="status-filter"><span>Status</span>
+          <select id="status-filter">
+            <option value="all">Todos</option>
+            <option value="new">Novo</option>
+            <option value="in_progress">Em atendimento</option>
+            <option value="quote_sent">Cotação enviada</option>
+            <option value="waiting">Aguardando cliente</option>
+            <option value="closed">Fechado</option>
+            <option value="cancelled">Cancelado</option>
+          </select>
+        </label>
+        <button id="refresh-button" class="button button-outline" type="button" aria-label="Atualizar lista">Atualizar</button>
+      </div>
+
+      <div class="workspace">
+        <section class="queue-panel" aria-labelledby="queue-title">
+          <div class="section-heading">
+            <div><h2 id="queue-title">Fila da equipe</h2><p id="queue-summary" class="muted">Carregando atendimentos…</p></div>
+            <span class="route-line" aria-hidden="true"></span>
+          </div>
+          <div id="request-list" class="request-list" aria-live="polite"></div>
+          <div class="pagination">
+            <button id="previous-page" class="button button-quiet" type="button" disabled>Anterior</button>
+            <span id="page-indicator" class="muted">Página 1</span>
+            <button id="next-page" class="button button-quiet" type="button" disabled>Próxima</button>
+          </div>
+          <p class="search-hint">A busca filtra os atendimentos da página exibida.</p>
+        </section>
+
+        <section class="detail-panel" aria-labelledby="editor-title">
+          <div id="empty-editor" class="empty-editor">
+            <span class="compass-mark" aria-hidden="true">✳</span>
+            <h2>Vamos cuidar desta viagem com atenção.</h2>
+            <p>Selecione um contato na fila ou comece um novo atendimento.</p>
+          </div>
+          <form id="request-form" class="request-form" hidden>
+            <div class="editor-heading">
+              <div><p class="eyebrow">FICHA DE ATENDIMENTO</p><h2 id="editor-title">Novo atendimento</h2></div>
+              <a id="whatsapp-link" class="whatsapp-link" href="#" target="_blank" rel="noopener noreferrer" hidden>Falar no WhatsApp ↗</a>
+            </div>
+
+            <fieldset>
+              <legend>Contato</legend>
+              <div class="form-grid">
+                <div class="field field-span-2"><label for="customer-name">Nome do cliente</label><input id="customer-name" name="customer_name" type="text" required maxlength="120" autocomplete="name" /></div>
+                <div class="field field-span-2"><label for="customer-whatsapp">WhatsApp com DDD ou código do país</label><input id="customer-whatsapp" name="customer_whatsapp" type="tel" required maxlength="24" autocomplete="tel" placeholder="19 99999-9999 ou +55 19 99999-9999" /></div>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>Viagem</legend>
+              <div class="form-grid">
+                <div class="field"><label for="origin">Origem</label><input id="origin" name="origin" type="text" required maxlength="120" placeholder="Cidade ou aeroporto" /></div>
+                <div class="field"><label for="destination">Destino</label><input id="destination" name="destination" type="text" required maxlength="120" placeholder="Cidade ou aeroporto" /></div>
+                <div class="field"><label for="trip-type">Tipo de viagem</label><select id="trip-type" name="trip_type"><option value="round_trip">Ida e volta</option><option value="one_way">Somente ida</option></select></div>
+                <div class="field"><label for="travel-class">Classe</label><select id="travel-class" name="travel_class"><option value="any">Todas as classes</option><option value="economy">Econômica</option><option value="premium">Premium economy</option><option value="business">Executiva</option><option value="first">Primeira classe</option></select></div>
+                <div class="field"><label for="departure-date">Data de ida</label><input id="departure-date" name="departure_date" type="date" required /></div>
+                <div id="return-date-field" class="field"><label for="return-date">Data de volta</label><input id="return-date" name="return_date" type="date" /></div>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>Viajantes</legend>
+              <div class="form-grid traveler-counts">
+                <div class="field"><label for="adults-count">Adultos <span class="field-hint">12 anos ou mais</span></label><input id="adults-count" name="adults" type="number" min="1" max="9" value="1" required /></div>
+                <div class="field"><label for="children-count">Crianças <span class="field-hint">2 a 11 anos</span></label><input id="children-count" name="children_count" type="number" min="0" max="8" value="0" /></div>
+                <div class="field"><label for="babies-count">Bebês <span class="field-hint">0 a 23 meses</span></label><input id="babies-count" name="babies_count" type="number" min="0" max="8" value="0" /></div>
+              </div>
+              <div id="child-ages" class="age-fields"></div>
+              <div id="baby-ages" class="age-fields"></div>
+            </fieldset>
+
+            <fieldset>
+              <legend>Acompanhamento</legend>
+              <div class="form-grid">
+                <div class="field"><label for="request-status">Status</label><select id="request-status" name="status"><option value="new">Novo</option><option value="in_progress">Em atendimento</option><option value="quote_sent">Cotação enviada</option><option value="waiting">Aguardando cliente</option><option value="closed">Fechado</option><option value="cancelled">Cancelado</option></select></div>
+                <div class="field"><label for="assigned-to">Responsável <span class="field-hint">opcional</span></label><input id="assigned-to" name="assigned_to" type="text" maxlength="120" placeholder="Nome da pessoa da equipe" /></div>
+                <div class="field"><label for="follow-up-on">Próximo contato</label><input id="follow-up-on" name="follow_up_on" type="date" /></div>
+                <div class="field field-span-2"><label for="customer-notes">Observações da viagem</label><textarea id="customer-notes" name="customer_notes" rows="3" maxlength="800" placeholder="Preferências ou detalhes compartilhados pelo cliente"></textarea></div>
+                <div class="field field-span-2"><label for="internal-notes">Nota interna</label><textarea id="internal-notes" name="internal_notes" rows="3" maxlength="2000" placeholder="Próximas ações para a equipe"></textarea></div>
+              </div>
+            </fieldset>
+            <p id="form-message" class="message" role="status" aria-live="polite" hidden></p>
+            <div class="form-actions"><button id="cancel-edit-button" class="button button-quiet" type="button">Cancelar</button><button id="save-request-button" class="button button-primary" type="submit">Salvar atendimento</button></div>
+          </form>
+        </section>
+      </div>
+      <p class="privacy-note">Use este painel apenas para informações necessárias ao atendimento. Não registre documentos nem dados de pagamento.</p>
+    </section>
+  </main>
+  <footer class="app-footer"><span>Alexia Travel</span><span>Uma conversa, novos caminhos.</span></footer>
+</body>
+</html>
