@@ -1,758 +1,509 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#17324d" />
-    <meta name="description" content="Peça uma cotação personalizada de passagem aérea nacional com a Alexia Travel. Informe sua viagem e fale com nossa equipe pelo WhatsApp." />
-    <meta name="keywords" content="Alexia Travel, passagem aérea, cotação de passagem, viagens nacionais, interior de SP" />
-    <link rel="canonical" href="https://www.alexiatravel.com.br/" />
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Alexia Travel" />
-    <meta property="og:url" content="https://www.alexiatravel.com.br/" />
-    <meta property="og:title" content="Alexia Travel | Vamos planejar sua próxima viagem" />
-    <meta property="og:description" content="Peça sua cotação de passagem aérea nacional pelo WhatsApp." />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Alexia Travel | Cotação de passagens" />
-    <meta name="twitter:description" content="Conte para onde quer viajar. Nossa equipe prepara sua cotação." />
-    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="/styles.css" />
-    <title>Alexia Travel | Cotação de passagens nacionais</title>
-  </head>
-  <body>
-    <a class="skip-link" href="#cotacao">Ir para o pedido de cotação</a>
-    <header class="site-header">
-      <a class="brand" href="#inicio" aria-label="Alexia Travel — início">
-        <img class="brand-mark" src="/logo.svg" alt="" width="42" height="42" />
-        <span class="brand-type"><strong>alexia</strong><span>TRAVEL</span></span>
-      </a>
-      <nav class="main-nav" aria-label="Navegação principal">
-        <a href="#como-funciona">Como funciona</a>
-        <a href="#pacotes">Pacotes</a>
-        <a class="nav-cta" href="#cotacao">Pedir cotação <span aria-hidden="true">↗</span></a>
-      </nav>
-    </header>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#17324d">
+<title>Alexia Travel | Passagens, Pacotes e Orçamentos de Viagem</title>
+<meta name="description" content="Cote passagens aéreas, peça orçamento e confira pacotes de viagem com a Alexia Travel, agência de viagens em Indaiatuba.">
+<link rel="canonical" href="https://www.alexiatravel.com.br/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#17324d;--ink-soft:#526577;--terra:#c98b5b;--terra-esc:#b07243;--paper:#f7f5f0;--paper-deep:#eeeae1;--white:#fffefa;--borda:#dfdbd2;
+    --font-display:'Lora',Georgia,serif;--font-body:'DM Sans',Arial,sans-serif
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--font-body);color:var(--ink);background:var(--paper);line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{text-decoration:none;color:inherit}
+  .container{max-width:1120px;margin:0 auto;padding:0 22px}
 
-    <main id="inicio">
-      <section class="hero" aria-labelledby="hero-title">
-        <img class="hero-photo" src="/manus-storage/async-images/NYDFXRDtMnxNaIBbF4QWCk/image-1.webp" alt="Praia brasileira ao entardecer, com mar azul e faixa de areia" fetchpriority="high" />
-        <div class="hero-shade"></div>
-        <div class="hero-content">
-          <p class="eyebrow hero-eyebrow"><span></span> DO INTERIOR DE SP PARA O BRASIL</p>
-          <h1 id="hero-title">Sua próxima viagem começa com uma boa conversa.</h1>
-          <p class="hero-copy">Conte para onde quer ir. A equipe Alexia Travel prepara uma cotação de passagem aérea nacional para você.</p>
-          <a class="hero-link" href="#cotacao">Pedir minha cotação <span aria-hidden="true">↓</span></a>
-        </div>
-        <div class="hero-caption"><span>VIAGENS NACIONAIS</span><span>Atendimento próximo, do seu jeito</span></div>
-        <div class="hero-stamp" aria-hidden="true"><span>VAMOS</span><span>VIAJAR</span><i>✳</i></div>
-      </section>
+  /* topo */
+  header{position:sticky;top:0;z-index:20;background:var(--paper);border-bottom:1px solid var(--borda)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:76px}
+  .brand{display:inline-flex;align-items:center;gap:10px}
+  .brand-type{display:flex;flex-direction:column;line-height:1}
+  .brand-type strong{font:600 23px/.96 var(--font-display);letter-spacing:-1px}
+  .brand-type span{margin-top:6px;font:700 8px/1 var(--font-body);letter-spacing:3.7px}
+  nav ul{display:flex;gap:26px;list-style:none;align-items:center}
+  nav a{font-weight:600;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink)}
+  nav a:hover{color:var(--terra-esc)}
+  .btn{display:inline-block;padding:14px 26px;border-radius:4px;font:700 .85rem var(--font-body);letter-spacing:.06em;text-transform:uppercase;border:0;cursor:pointer;transition:.2s;text-align:center}
+  .btn-terra{background:var(--terra);color:var(--ink)}
+  .btn-terra:hover{background:#d49a6b;transform:translateY(-1px)}
+  .btn-ink{background:var(--ink);color:var(--white)}
+  .btn-ink:hover{background:#21456a}
+  nav .btn-ink{padding:10px 18px;font-size:.75rem;color:var(--white)}
+  nav .btn-ink:hover{color:var(--white)}
+  .menu-toggle{display:none;background:none;border:0;font-size:1.7rem;color:var(--ink);cursor:pointer}
 
-      <section class="quote-section" id="cotacao" aria-labelledby="quote-title">
-        <div class="quote-intro">
-          <p class="eyebrow section-eyebrow">SUA VIAGEM, DO SEU JEITO</p>
-          <h2 id="quote-title">Vamos encontrar o melhor caminho?</h2>
-          <p>Preencha os detalhes e envie seu pedido pelo WhatsApp. Nossa equipe responde com uma cotação personalizada.</p>
-        </div>
-        <form class="quote-card" id="quote-form">
-          <div class="form-heading">
-            <span class="form-number">01</span>
-            <div><h3>Conte pra gente sobre a viagem</h3><p>Leva só um minutinho.</p></div>
-          </div>
-          <div class="form-grid">
-            <div class="field field-trip-type">
-              <label for="trip-type">Tipo de viagem</label>
-              <select id="trip-type" name="tripType">
-                <option value="roundtrip">Ida e volta</option>
-                <option value="oneway">Somente ida</option>
-              </select>
-            </div>
-            <div class="field airport-field">
-              <label for="origin">De onde você sai?</label>
-              <div class="airport-control">
-                <input id="origin" name="origin" type="text" placeholder="Toque para escolher ou digite" autocomplete="off" maxlength="100" role="combobox" aria-autocomplete="list" aria-haspopup="listbox" aria-expanded="false" aria-controls="origin-airports" required />
-                <div class="airport-list" id="origin-airports" role="listbox" aria-label="Sugestões de aeroporto de origem" hidden></div>
-              </div>
-              <p class="field-hint">Toque para ver os principais aeroportos. Você também pode digitar outro.</p>
-            </div>
-            <div class="field airport-field">
-              <label for="destination">Para onde vai?</label>
-              <div class="airport-control">
-                <input id="destination" name="destination" type="text" placeholder="Toque para escolher ou digite" autocomplete="off" maxlength="100" role="combobox" aria-autocomplete="list" aria-haspopup="listbox" aria-expanded="false" aria-controls="destination-airports" required />
-                <div class="airport-list" id="destination-airports" role="listbox" aria-label="Sugestões de aeroporto de destino" hidden></div>
-              </div>
-              <p class="field-hint">A lista filtra enquanto você digita e aceita outras cidades.</p>
-            </div>
-            <div class="field">
-              <label for="departure">Data de ida</label>
-              <input id="departure" name="departure" type="date" required />
-            </div>
-            <div class="field return-field" id="return-field">
-              <label for="return-date">Data de volta</label>
-              <input id="return-date" name="returnDate" type="date" required />
-            </div>
-            <div class="field field-traveler-picker">
-              <label for="travelers-trigger">Viajantes e classe</label>
-              <div class="traveler-picker" id="traveler-picker">
-                <button class="travelers-trigger" id="travelers-trigger" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="travelers-popover">
-                  <span class="travelers-trigger-copy"><strong id="travelers-summary">1 viajante</strong><small id="travelers-detail">1 adulto · Todas as classes</small></span>
-                  <span class="travelers-trigger-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><circle cx="12" cy="8" r="3.2"></circle><path d="M5.5 20c.5-3.6 2.8-5.6 6.5-5.6s6 2 6.5 5.6"></path></svg></span>
-                </button>
-                <div class="travelers-popover" id="travelers-popover" role="dialog" aria-labelledby="travelers-title" hidden>
-                  <div class="travelers-popover-title" id="travelers-title">Viajantes</div>
-                  <div class="traveler-row">
-                    <div class="traveler-category"><strong>Adultos</strong><span>Acima de 12 anos</span></div>
-                    <div class="counter-control">
-                      <button class="counter-button" type="button" data-traveler-kind="adults" data-traveler-step="-1" aria-label="Diminuir adultos">−</button>
-                      <span class="counter-value" id="adults-count" aria-live="polite">1</span>
-                      <button class="counter-button" type="button" data-traveler-kind="adults" data-traveler-step="1" aria-label="Aumentar adultos">+</button>
-                    </div>
-                  </div>
-                  <div class="traveler-row">
-                    <div class="traveler-category"><strong>Crianças</strong><span>De 2 até 11 anos</span></div>
-                    <div class="counter-control">
-                      <button class="counter-button" type="button" data-traveler-kind="children" data-traveler-step="-1" aria-label="Diminuir crianças">−</button>
-                      <span class="counter-value" id="children-count" aria-live="polite">0</span>
-                      <button class="counter-button" type="button" data-traveler-kind="children" data-traveler-step="1" aria-label="Aumentar crianças">+</button>
-                    </div>
-                  </div>
-                  <div class="traveler-row">
-                    <div class="traveler-category"><strong>Bebês</strong><span>De 0 até 23 meses</span></div>
-                    <div class="counter-control">
-                      <button class="counter-button" type="button" data-traveler-kind="babies" data-traveler-step="-1" aria-label="Diminuir bebês">−</button>
-                      <span class="counter-value" id="babies-count" aria-live="polite">0</span>
-                      <button class="counter-button" type="button" data-traveler-kind="babies" data-traveler-step="1" aria-label="Aumentar bebês">+</button>
-                    </div>
-                  </div>
-                  <div class="field traveler-class-field">
-                    <label for="travel-class">Classe</label>
-                    <select id="travel-class" name="travelClass">
-                      <option value="all">Todas as classes</option>
-                      <option value="economy">Econômica</option>
-                      <option value="premium">Premium Economy</option>
-                      <option value="business">Executiva</option>
-                      <option value="first">Primeira classe</option>
-                    </select>
-                  </div>
-                  <div class="traveler-actions">
-                    <button class="traveler-clear" id="traveler-clear" type="button">Limpar</button>
-                    <button class="traveler-apply" id="traveler-apply" type="button">Aplicar</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="children-ages" id="children-ages" aria-live="polite" hidden></div>
-            <div class="baby-ages" id="baby-ages" aria-live="polite" hidden></div>
-            <div class="field field-notes">
-              <label for="notes">Algum detalhe que devemos saber? <span>(opcional)</span></label>
-              <textarea id="notes" name="notes" rows="3" maxlength="500" placeholder="Ex.: prefiro voos sem conexão"></textarea>
-            </div>
-          </div>
-          <div class="form-actions">
-            <button class="whatsapp-button" type="submit"><span class="wa-icon" aria-hidden="true">◉</span> Continuar pelo WhatsApp <span aria-hidden="true">↗</span></button>
-            <p class="form-note">O WhatsApp abrirá com a mensagem preenchida. Revise os dados e toque em enviar para solicitar a cotação.</p>
-          </div>
-          <p class="form-status" id="form-status" role="status" aria-live="polite" hidden></p>
-          <a class="whatsapp-fallback" id="whatsapp-fallback" href="#" target="_blank" rel="noopener noreferrer" hidden>Se o WhatsApp não abriu, toque aqui para continuar</a>
-        </form>
-        <p class="quote-disclaimer"><span aria-hidden="true">✳</span> Esta página não consulta tarifas em tempo real. Preço e disponibilidade serão confirmados pela nossa equipe com o fornecedor.</p>
-      </section>
+  /* hero + busca */
+  .hero{position:relative;color:var(--white);padding:84px 0 130px;background:
+      linear-gradient(90deg,rgba(14,34,49,.82),rgba(19,39,52,.55) 55%,rgba(18,39,53,.15)),
+      linear-gradient(0deg,rgba(15,34,49,.35),transparent 40%),
+      url("https://unsplash.com/photos/JQK137K59_I/download?force=true&w=1920") center 54%/cover no-repeat,#223e51}
+  .eyebrow{display:flex;align-items:center;gap:10px;font-size:10px;font-weight:700;letter-spacing:.2em;color:rgba(255,254,250,.85);text-transform:uppercase}
+  .eyebrow i{width:24px;height:1px;background:var(--terra)}
+  .hero h1{font:500 clamp(2.1rem,5.2vw,3.9rem)/1.12 var(--font-display);letter-spacing:-.04em;max-width:720px;margin:22px 0 16px;text-wrap:balance}
+  .hero h1 em{color:#e7b990;font-weight:400}
+  .hero p{font-size:1rem;color:rgba(255,254,250,.88);max-width:480px;line-height:1.8}
 
-      <section class="packages-section" id="pacotes" aria-labelledby="packages-title">
-        <div class="section-heading">
-          <div><p class="eyebrow section-eyebrow">IDEIAS PARA VIAJAR</p><h2 id="packages-title">Pacotes para inspirar <em>sua próxima viagem.</em></h2></div>
-          <p class="heading-note">Sem valores publicados.<br />Consulte datas, disponibilidade e condições com a equipe.</p>
-        </div>
-        <div class="package-grid">
-          <article class="package-card package-card-beach">
-            <p class="package-kicker">DESTINO NACIONAL</p><h3>Maceió e as praias de Alagoas</h3>
-            <p>Uma ideia de roteiro para descansar perto do mar. A equipe confirma opções e condições para as suas datas.</p>
-            <button class="package-button" type="button" data-package-title="Maceió e as praias de Alagoas">Consultar este roteiro <span aria-hidden="true">↗</span></button>
-          </article>
-          <article class="package-card package-card-parks">
-            <p class="package-kicker">DESTINO INTERNACIONAL</p><h3>Orlando: parques e diversão</h3>
-            <p>Conte quando pretende viajar e a equipe ajuda a organizar uma proposta sob medida.</p>
-            <button class="package-button" type="button" data-package-title="Orlando: parques e diversão">Consultar este roteiro <span aria-hidden="true">↗</span></button>
-          </article>
-          <article class="package-card package-card-europe">
-            <p class="package-kicker">DESTINO INTERNACIONAL</p><h3>Lisboa: uma pausa europeia</h3>
-            <p>Uma inspiração de viagem para transformar em um roteiro alinhado às suas preferências.</p>
-            <button class="package-button" type="button" data-package-title="Lisboa: uma pausa europeia">Consultar este roteiro <span aria-hidden="true">↗</span></button>
-          </article>
-          <article class="package-card package-card-cruise">
-            <p class="package-kicker">CRUZEIROS</p><h3>Cruzeiro pela costa brasileira</h3>
-            <p>Consulte com a equipe as opções de datas, embarque e condições disponíveis.</p>
-            <button class="package-button" type="button" data-package-title="Cruzeiro pela costa brasileira">Consultar este roteiro <span aria-hidden="true">↗</span></button>
-          </article>
-        </div>
-      </section>
+  .busca{background:var(--white);color:var(--ink);border-radius:6px;box-shadow:0 24px 60px rgba(14,34,49,.22);margin-top:-80px;position:relative;z-index:5;overflow:hidden}
+  .tabs{display:flex;background:var(--paper-deep);border-bottom:1px solid var(--borda)}
+  .tab{flex:1;padding:17px 10px;border:0;background:none;font:700 .78rem var(--font-body);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);cursor:pointer;border-bottom:3px solid transparent;display:block;text-align:center}
+  .tab.ativa{color:var(--ink);background:var(--white);border-bottom-color:var(--terra)}
+  .painel{display:none;padding:26px}
+  .painel.ativo{display:block}
+  .grid{display:grid;gap:14px;grid-template-columns:repeat(12,1fr)}
+  .c3{grid-column:span 3}.c4{grid-column:span 4}.c6{grid-column:span 6}.c12{grid-column:span 12}
+  label{display:block;font-size:.7rem;font-weight:700;color:var(--ink-soft);margin-bottom:5px;text-transform:uppercase;letter-spacing:.12em}
+  input,select,textarea{width:100%;padding:12px 13px;border:1.5px solid var(--borda);border-radius:4px;font:inherit;background:var(--white);color:var(--ink)}
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--terra)}
+  .radios{display:flex;gap:18px;margin-bottom:14px;flex-wrap:wrap}
+  .radios label{display:flex;align-items:center;gap:6px;text-transform:none;letter-spacing:0;font-size:.95rem;color:var(--ink);margin:0;cursor:pointer;font-weight:500}
+  .radios input{width:auto;accent-color:var(--terra)}
+  .check{display:flex;align-items:center;gap:8px;text-transform:none!important;letter-spacing:0!important;font-size:.92rem!important;color:var(--ink)!important;font-weight:500!important}
+  .check input{width:auto;accent-color:var(--terra)}
+  .nota{font-size:.82rem;color:var(--ink-soft);margin-top:12px}
+  .acao{display:flex;align-items:end}
+  .acao .btn{width:100%}
+  .atend-box.oculto{display:none}
 
-      <section class="how-section" id="como-funciona" aria-labelledby="how-title">
-        <div class="section-heading">
-          <div><p class="eyebrow section-eyebrow">SIMPLES ASSIM</p><h2 id="how-title">Da ideia à cotação, pertinho de você.</h2></div>
-          <p class="heading-note">Sem pressa para escolher.<br />A conversa começa quando você quiser.</p>
-        </div>
-        <div class="steps-grid">
-          <article class="step-card"><span>01</span><h3>Conte seu plano</h3><p>Preencha o destino, as datas e quem vai viajar.</p></article>
-          <article class="step-card"><span>02</span><h3>Envie pelo WhatsApp</h3><p>Confira a mensagem que preparamos e envie para nossa equipe.</p></article>
-          <article class="step-card"><span>03</span><h3>Receba sua cotação</h3><p>Nossa equipe consulta as opções e conversa com você.</p></article>
-        </div>
-      </section>
+  section{padding:88px 0}
+  .titulo{margin-bottom:32px}
+  .titulo .tag{font-size:10px;font-weight:700;letter-spacing:.2em;color:var(--terra-esc);text-transform:uppercase}
+  .titulo h2{font:500 clamp(1.8rem,3.6vw,2.7rem)/1.2 var(--font-display);letter-spacing:-.04em;margin-top:10px}
+  .titulo h2 em{color:var(--terra);font-weight:400}
+  .titulo p{color:var(--ink-soft);margin-top:8px;font-size:.95rem}
 
-      <section class="experiences" aria-labelledby="experiences-title">
-        <div class="section-heading">
-          <div><p class="eyebrow section-eyebrow">UM GOSTINHO DO QUE VEM POR AÍ</p><h2 id="experiences-title">Qual paisagem chama você?</h2></div>
-          <p class="heading-note">Praia, montanha ou boas companhias.<br />Toda viagem começa de um jeito.</p>
-        </div>
-        <div class="photo-grid">
-          <article class="photo-card photo-card-beach"><img src="/manus-storage/async-images/NYDFXRDtMnxNaIBbF4QWCk/image-2.webp" alt="Mar azul e areia clara em uma praia brasileira" loading="lazy" /><div class="photo-overlay"></div><div class="photo-label"><span>01 / PÉS NA AREIA</span><h3>Dias de praia</h3></div></article>
-          <article class="photo-card photo-card-mountain"><img src="/manus-storage/async-images/Up5w1Dxx2lseziuJo2pOW7/image-1.webp" alt="Montanhas verdes ao nascer do sol" loading="lazy" /><div class="photo-overlay"></div><div class="photo-label"><span>02 / AR PURO</span><h3>Entre montanhas</h3></div></article>
-          <article class="photo-card photo-card-together"><img src="/manus-storage/async-images/Up5w1Dxx2lseziuJo2pOW7/image-2.webp" alt="Amigos sorrindo durante uma viagem" loading="lazy" /><div class="photo-overlay"></div><div class="photo-label"><span>03 / BONS MOMENTOS</span><h3>Viajar junto</h3></div></article>
-        </div>
-      </section>
+  /* pacotes */
+  #pacotes{background:var(--paper-deep)}
+  .filtros{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:26px;align-items:center}
+  .chip{padding:9px 18px;border-radius:999px;border:1.5px solid var(--borda);background:var(--white);font:600 .85rem var(--font-body);color:var(--ink);cursor:pointer}
+  .chip.ativa{background:var(--ink);border-color:var(--ink);color:var(--white)}
+  .filtros input{max-width:260px;margin-left:auto}
+  .pacotes{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:22px}
+  .pac{background:var(--white);border-radius:4px;overflow:hidden;display:flex;flex-direction:column;transition:.25s}
+  .pac:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(23,50,77,.14)}
+  .pac .foto{height:190px;background-size:cover;background-position:center;background-color:#223e51;position:relative}
+  .pac .foto::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(16,34,49,.5),transparent 60%)}
+  .pac .selo{position:absolute;z-index:1;left:12px;top:12px;background:var(--white);color:var(--ink);font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;padding:5px 10px;border-radius:2px}
+  .pac .corpo{padding:18px;display:flex;flex-direction:column;gap:6px;flex:1}
+  .pac h3{font:500 1.2rem/1.25 var(--font-display);letter-spacing:-.02em}
+  .pac .meta{font-size:.85rem;color:var(--ink-soft)}
+  .pac ul{list-style:none;font-size:.88rem;color:var(--ink-soft)}
+  .pac li::before{content:"✓ ";color:var(--terra);font-weight:800}
+  .pac .preco{margin-top:auto;padding-top:12px}
+  .pac .preco small{font-size:.75rem;color:var(--ink-soft)}
+  .pac .preco strong{display:block;font:600 1.5rem var(--font-display);color:var(--ink)}
+  .pac .btn{margin-top:12px;padding:12px}
+  .vazio{grid-column:1/-1;text-align:center;color:var(--ink-soft);padding:30px}
 
-      <section class="closing" aria-labelledby="closing-title">
-        <div class="closing-mark" aria-hidden="true">✳</div><p class="eyebrow">ALEXIA TRAVEL · INTERIOR DE SÃO PAULO</p>
-        <h2 id="closing-title">Seu próximo destino<br /><em>pode começar aqui.</em></h2>
-        <a class="closing-link" href="#cotacao">Pedir uma cotação <span aria-hidden="true">↑</span></a>
-      </section>
-    </main>
+  /* como funciona */
+  .passos .linha{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:32px}
+  .passo .n{width:46px;height:46px;border-radius:50%;border:1px solid var(--terra);color:var(--terra-esc);font:500 1.2rem var(--font-display);display:flex;align-items:center;justify-content:center;margin-bottom:12px}
+  .passo h3{font:500 1.25rem var(--font-display);margin-bottom:4px}
+  .passo p{color:var(--ink-soft);font-size:.95rem}
 
-    <footer class="site-footer">
-      <a class="brand footer-brand" href="#inicio" aria-label="Alexia Travel — início"><img class="brand-mark" src="/logo.svg" alt="" width="36" height="36" /><span class="brand-type"><strong>alexia</strong><span>TRAVEL</span></span></a>
-      <p>Uma conversa. Novos caminhos pela frente.</p><span class="footer-place">INTERIOR DE SP · BRASIL</span>
-    </footer>
+  #contato{background:var(--ink);color:var(--white)}
+  .contato{display:flex;gap:30px;flex-wrap:wrap;justify-content:space-between;align-items:flex-start}
+  .contato h2{font:500 clamp(1.8rem,3.4vw,2.5rem) var(--font-display);letter-spacing:-.04em;margin-bottom:16px}
+  .contato ul{list-style:none;color:rgba(255,254,250,.8)}
+  .contato li{margin-bottom:8px}
+  .contato strong{color:var(--white)}
+  .contato a.lnk{color:#e7b990;font-weight:600}
+  .lista-atend{display:flex;flex-direction:column;gap:10px;min-width:250px}
+  .lista-atend .btn{background:#25d366;color:#fff;text-transform:none;letter-spacing:0;font-size:.95rem;text-align:left;padding:13px 20px;border-radius:4px}
+  .lista-atend .btn:hover{background:#1ebe5a}
+  .lista-atend .btn small{display:block;font-weight:500;opacity:.9}
 
-    <dialog class="contact-dialog" id="contact-dialog" aria-labelledby="contact-title">
-      <div class="contact-dialog-card">
-        <button class="dialog-close" id="contact-close" type="button" aria-label="Fechar">×</button>
-        <p class="eyebrow section-eyebrow">SÓ MAIS UM PASSO</p>
-        <h2 id="contact-title">Como podemos falar com você?</h2>
-        <p id="contact-description" class="contact-dialog-copy">Informe seu nome e WhatsApp. Vamos registrar seu pedido e gerar um protocolo antes de abrir o WhatsApp.</p>
-        <form id="contact-form" class="contact-form">
-          <div class="field"><label for="contact-name">Seu nome</label><input id="contact-name" name="customerName" type="text" maxlength="120" autocomplete="name" required /></div>
-          <div class="field"><label for="contact-whatsapp">Seu WhatsApp com DDD</label><input id="contact-whatsapp" name="customerWhatsapp" type="tel" maxlength="24" autocomplete="tel" inputmode="tel" placeholder="(19) 99014-3009" required /></div>
-          <div class="field" id="preferred-attendant-field" hidden><label for="preferred-attendant">Escolha quem vai atender</label><select id="preferred-attendant" name="preferredAttendant"><option value="">Selecione um atendente</option></select></div>
-          <button class="whatsapp-button" id="contact-submit" type="submit"><span class="wa-icon" aria-hidden="true">◉</span> Registrar e continuar pelo WhatsApp <span aria-hidden="true">↗</span></button>
-        </form>
-        <p id="contact-status" class="form-status" role="status" aria-live="polite" hidden></p>
-        <p class="contact-privacy">Usaremos esses dados para acompanhar este pedido. Não informe documentos ou dados de pagamento.</p>
+  footer{background:var(--paper);border-top:1px solid var(--borda);color:var(--ink-soft);text-align:center;padding:30px 20px;font-size:.85rem}
+  footer strong{color:var(--ink);font-family:var(--font-display);font-size:1.1rem}
+  .wpp-flutuante{position:fixed;right:18px;bottom:18px;z-index:30;background:#25d366;color:#fff;width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.7rem;box-shadow:0 6px 18px rgba(0,0,0,.25);border:0;cursor:pointer}
+
+  /* seletor de atendente */
+  .modal{position:fixed;inset:0;background:rgba(14,34,49,.6);z-index:50;display:none;align-items:center;justify-content:center;padding:20px}
+  .modal.aberto{display:flex}
+  .modal .caixa{background:var(--white);border-radius:6px;padding:26px;max-width:380px;width:100%;box-shadow:0 24px 60px rgba(0,0,0,.35)}
+  .modal h3{font:500 1.4rem var(--font-display);margin-bottom:4px}
+  .modal p{color:var(--ink-soft);font-size:.9rem;margin-bottom:16px}
+  .modal .opcoes{display:flex;flex-direction:column;gap:10px}
+  .modal .opcoes button{background:var(--paper);border:1.5px solid var(--borda);border-radius:4px;padding:13px 16px;font:600 1rem var(--font-body);color:var(--ink);cursor:pointer;text-align:left}
+  .modal .opcoes button:hover{border-color:var(--terra)}
+  .modal .opcoes small{display:block;font-weight:500;color:var(--ink-soft)}
+  .modal .fechar{margin-top:14px;background:none;border:0;color:var(--ink-soft);cursor:pointer;font:inherit;text-decoration:underline}
+
+  @media(max-width:800px){
+    .menu-toggle{display:block}
+    nav ul{display:none;position:absolute;top:76px;left:0;right:0;background:var(--paper);flex-direction:column;padding:18px;gap:14px;box-shadow:0 10px 20px rgba(0,0,0,.08)}
+    nav ul.aberto{display:flex}
+    .c3,.c4,.c6{grid-column:span 12}
+    .painel{padding:18px}
+    .tab{font-size:.68rem;padding:14px 2px;letter-spacing:.05em}
+    .filtros input{max-width:none;margin-left:0;width:100%}
+    section{padding:56px 0}
+    .hero{padding:56px 0 110px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="#topo" class="brand" aria-label="Alexia Travel — início">
+      <svg width="42" height="42" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="29" fill="#17324d"/><circle cx="32" cy="32" r="22.5" fill="none" stroke="#e9dfd0" stroke-width="1.2"/><path d="M32 11.5 36.4 28l16.1 4-16.1 4.1L32 52.5l-4.2-16.4L11.5 32l16.3-4.1z" fill="#c98b5b"/><circle cx="32" cy="32" r="4" fill="#fffefa"/><circle cx="32" cy="11.5" r="1.2" fill="#fffefa"/></svg>
+      <span class="brand-type"><strong>alexia</strong><span>TRAVEL</span></span>
+    </a>
+    <nav>
+      <button class="menu-toggle" aria-label="Abrir menu" onclick="document.getElementById('menu').classList.toggle('aberto')">☰</button>
+      <ul id="menu" onclick="this.classList.remove('aberto')">
+        <li><a href="#busca" data-tab="passagens">Passagens</a></li>
+        <li><a href="#pacotes">Pacotes</a></li>
+        <li><a href="#busca" data-tab="orcamento">Orçamento</a></li>
+        <li><a href="#contato">Contato</a></li>
+        <li><a class="btn btn-ink" href="#" data-wpp="Olá! Vim pelo site da Alexia Travel e gostaria de ajuda com uma viagem.">WhatsApp</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="topo">
+  <div class="hero">
+    <div class="container">
+      <p class="eyebrow"><i></i> AGÊNCIA DE VIAGENS · INDAIATUBA / SP</p>
+      <h1>Encontre sua próxima viagem, <em>com a gente do seu lado.</em></h1>
+      <p>Cote passagens, peça um orçamento ou escolha um pacote. Respondemos rápido pelo WhatsApp.</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="busca" id="busca">
+      <div class="tabs">
+        <button class="tab ativa" data-tab="passagens">✈️ Passagens</button>
+        <button class="tab" data-tab="orcamento">📝 Orçamento</button>
+        <a class="tab" href="#pacotes">🧳 Pacotes</a>
       </div>
-    </dialog>
 
-    <script type="module">
-      import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
-      import { SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY } from './supabase-config.js';
+      <!-- PASSAGENS -->
+      <form class="painel ativo" id="painel-passagens" onsubmit="enviarPassagem(event)">
+        <div class="radios">
+          <label><input type="radio" name="trecho" value="ida e volta" checked> Ida e volta</label>
+          <label><input type="radio" name="trecho" value="somente ida"> Somente ida</label>
+        </div>
+        <div class="grid">
+          <div class="c3"><label for="origem">Saindo de</label><input id="origem" list="cidades" placeholder="Ex.: Campinas (VCP)" required></div>
+          <div class="c3"><label for="destino">Indo para</label><input id="destino" list="cidades" placeholder="Ex.: Maceió (MCZ)" required></div>
+          <div class="c3"><label for="ida">Ida</label><input id="ida" type="date" required></div>
+          <div class="c3" id="box-volta"><label for="volta">Volta</label><input id="volta" type="date"></div>
+          <div class="c3"><label for="adultos">Adultos</label><select id="adultos"></select></div>
+          <div class="c3"><label for="criancas">Crianças (2 a 11)</label><select id="criancas"></select></div>
+          <div class="c3"><label for="classe">Classe</label><select id="classe"><option>Econômica</option><option>Premium Economy</option><option>Executiva</option></select></div>
+          <div class="c3 acao"><label class="check" style="margin:0 0 12px"><input type="checkbox" id="flex"> Datas flexíveis (±3 dias)</label></div>
+          <div class="c3"><label for="nome-p">Seu nome</label><input id="nome-p" placeholder="Nome" required></div>
+          <div class="c3"><label for="tel-p">WhatsApp</label><input id="tel-p" type="tel" placeholder="(19) 9 0000-0000"></div>
+          <div class="c3 atend-box"><label for="atend-p">Quem vai te atender?</label><select id="atend-p" class="sel-atend"></select></div>
+          <div class="c3 acao"><button class="btn btn-terra" type="submit">Cotar passagem</button></div>
+        </div>
+        <p class="nota">Buscamos as melhores tarifas e enviamos as opções pelo WhatsApp, sem compromisso.</p>
+      </form>
 
-      const supabase = createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);
-      (() => {
-        const airports = [
-          'Aracaju — Aeroporto Santa Maria (AJU)',
-          'Belém — Aeroporto Internacional de Belém (BEL)',
-          'Belo Horizonte — Aeroporto de Confins (CNF)',
-          'Boa Vista — Aeroporto Internacional de Boa Vista (BVB)',
-          'Brasília — Aeroporto Internacional de Brasília (BSB)',
-          'Campinas — Aeroporto Internacional de Viracopos (VCP)',
-          'Campo Grande — Aeroporto Internacional de Campo Grande (CGR)',
-          'Cuiabá — Aeroporto Internacional Marechal Rondon (CGB)',
-          'Curitiba — Aeroporto Internacional Afonso Pena (CWB)',
-          'Florianópolis — Aeroporto Internacional Hercílio Luz (FLN)',
-          'Fortaleza — Aeroporto Internacional Pinto Martins (FOR)',
-          'Foz do Iguaçu — Aeroporto Internacional das Cataratas (IGU)',
-          'Goiânia — Aeroporto Santa Genoveva (GYN)',
-          'Ilhéus — Aeroporto Jorge Amado (IOS)',
-          'João Pessoa — Aeroporto Internacional Presidente Castro Pinto (JPA)',
-          'Juazeiro do Norte — Aeroporto Orlando Bezerra de Menezes (JDO)',
-          'Macapá — Aeroporto Internacional de Macapá (MCP)',
-          'Maceió — Aeroporto Internacional Zumbi dos Palmares (MCZ)',
-          'Manaus — Aeroporto Internacional Eduardo Gomes (MAO)',
-          'Natal — Aeroporto Internacional de Natal (NAT)',
-          'Navegantes — Aeroporto Internacional de Navegantes (NVT)',
-          'Palmas — Aeroporto Brigadeiro Lysias Rodrigues (PMW)',
-          'Petrolina — Aeroporto Senador Nilo Coelho (PNZ)',
-          'Porto Alegre — Aeroporto Internacional Salgado Filho (POA)',
-          'Porto Seguro — Aeroporto Internacional de Porto Seguro (BPS)',
-          'Porto Velho — Aeroporto Internacional de Porto Velho (PVH)',
-          'Recife — Aeroporto Internacional dos Guararapes (REC)',
-          'Rio Branco — Aeroporto Internacional de Rio Branco (RBR)',
-          'Rio de Janeiro — Aeroporto do Galeão (GIG)',
-          'Rio de Janeiro — Aeroporto Santos Dumont (SDU)',
-          'Salvador — Aeroporto Internacional de Salvador (SSA)',
-          'Santarém — Aeroporto de Santarém (STM)',
-          'São Luís — Aeroporto Internacional Marechal Cunha Machado (SLZ)',
-          'São Paulo — Aeroporto de Congonhas (CGH)',
-          'São Paulo — Aeroporto Internacional de Guarulhos (GRU)',
-          'Teresina — Aeroporto Senador Petrônio Portella (THE)',
-          'Uberlândia — Aeroporto de Uberlândia (UDI)',
-          'Vitória — Aeroporto de Vitória (VIX)'
-        ];
-        const form = document.getElementById('quote-form');
-        const tripType = document.getElementById('trip-type');
-        const departure = document.getElementById('departure');
-        const returnDate = document.getElementById('return-date');
-        const returnField = document.getElementById('return-field');
-        const origin = document.getElementById('origin');
-        const destination = document.getElementById('destination');
-        const travelerPicker = document.getElementById('traveler-picker');
-        const travelerTrigger = document.getElementById('travelers-trigger');
-        const travelerPopover = document.getElementById('travelers-popover');
-        const travelerClass = document.getElementById('travel-class');
-        const childrenAges = document.getElementById('children-ages');
-        const babyAges = document.getElementById('baby-ages');
-        const appliedTravelers = { adults: 1, children: 0, babies: 0 };
-        let draftTravelers = { ...appliedTravelers };
-        let appliedClass = 'all';
-        const status = document.getElementById('form-status');
-        const fallback = document.getElementById('whatsapp-fallback');
-        const contactDialog = document.getElementById('contact-dialog');
-        const contactForm = document.getElementById('contact-form');
-        const contactStatus = document.getElementById('contact-status');
-        const contactSubmit = document.getElementById('contact-submit');
-        const preferredAttendantField = document.getElementById('preferred-attendant-field');
-        const preferredAttendant = document.getElementById('preferred-attendant');
-        let pendingRequestType = 'flight';
-        let pendingPackageTitle = null;
-        let distributionMode = 'round_robin';
-        let distributionOptions = [];
-        let distributionLoaded = false;
-        let distributionRequest = null;
+      <!-- ORÇAMENTO -->
+      <form class="painel" id="painel-orcamento" onsubmit="enviarOrcamento(event)">
+        <div class="grid">
+          <div class="c4"><label for="o-tipo">O que você precisa?</label>
+            <select id="o-tipo"><option>Pacote completo</option><option>Hospedagem</option><option>Cruzeiro</option><option>Passagem + hotel</option><option>Seguro viagem</option><option>Roteiro personalizado</option><option>Grupo / excursão</option></select></div>
+          <div class="c4"><label for="o-destino">Destino</label><input id="o-destino" list="cidades" placeholder="Para onde quer ir?" required></div>
+          <div class="c4"><label for="o-quando">Quando</label><input id="o-quando" placeholder="Ex.: julho de 2027"></div>
+          <div class="c3"><label for="o-adultos">Adultos</label><select id="o-adultos"></select></div>
+          <div class="c3"><label for="o-criancas">Crianças</label><select id="o-criancas"></select></div>
+          <div class="c3"><label for="o-noites">Noites</label><input id="o-noites" type="number" min="1" placeholder="Ex.: 7"></div>
+          <div class="c3"><label for="o-valor">Orçamento aprox.</label>
+            <select id="o-valor"><option value="">Prefiro não informar</option><option>Até R$ 3.000</option><option>R$ 3.000 a R$ 6.000</option><option>R$ 6.000 a R$ 10.000</option><option>R$ 10.000 a R$ 20.000</option><option>Acima de R$ 20.000</option></select></div>
+          <div class="c12"><label for="o-obs">Conte mais</label><textarea id="o-obs" rows="2" placeholder="Preferências, ocasião especial, idade das crianças..."></textarea></div>
+          <div class="c3"><label for="o-nome">Seu nome</label><input id="o-nome" placeholder="Nome" required></div>
+          <div class="c3"><label for="o-tel">WhatsApp</label><input id="o-tel" type="tel" placeholder="(19) 9 0000-0000"></div>
+          <div class="c3 atend-box"><label for="atend-o">Quem vai te atender?</label><select id="atend-o" class="sel-atend"></select></div>
+          <div class="c3 acao"><button class="btn btn-terra" type="submit">Pedir orçamento</button></div>
+        </div>
+      </form>
+    </div>
+  </div>
 
-        function normalize(value) {
-          return value.trim().normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLocaleLowerCase('pt-BR');
-        }
-        function formatDate(value) {
-          const [year, month, day] = value.split('-');
-          return `${day}/${month}/${year}`;
-        }
-        function localDateString(date) {
-          const year = date.getFullYear();
-          const month = String(date.getMonth() + 1).padStart(2, '0');
-          const day = String(date.getDate()).padStart(2, '0');
-          return `${year}-${month}-${day}`;
-        }
-        function updateDateLimits() {
-          const today = localDateString(new Date());
-          departure.min = today;
-          returnDate.min = departure.value || today;
-          returnDate.setCustomValidity('');
-          if (returnDate.value && departure.value && returnDate.value < departure.value) {
-            returnDate.setCustomValidity('A data de volta precisa ser igual ou posterior à data de ida.');
-          }
-        }
-        function updateTripType() {
-          const oneWay = tripType.value === 'oneway';
-          returnField.hidden = oneWay;
-          returnDate.required = !oneWay;
-          if (oneWay) returnDate.value = '';
-          updateDateLimits();
-        }
-        const classLabels = { all: 'Todas as classes', economy: 'Econômica', premium: 'Premium Economy', business: 'Executiva', first: 'Primeira classe' };
-        const travelerLimits = { adults: { min: 1, max: 9 }, children: { min: 0, max: 8 }, babies: { min: 0, max: 8 } };
-        function updateCounterDisplay() {
-          Object.entries(draftTravelers).forEach(([kind, count]) => {
-            document.getElementById(`${kind}-count`).textContent = String(count);
-            const row = travelerPopover.querySelector(`[data-traveler-kind="${kind}"]`).parentElement;
-            const buttons = row.querySelectorAll('.counter-button');
-            buttons[0].disabled = count <= travelerLimits[kind].min;
-            buttons[1].disabled = count >= travelerLimits[kind].max;
-          });
-        }
-        function updateTravelerSummary() {
-          const total = appliedTravelers.adults + appliedTravelers.children + appliedTravelers.babies;
-          document.getElementById('travelers-summary').textContent = `${total} ${total === 1 ? 'viajante' : 'viajantes'}`;
-          const details = [`${appliedTravelers.adults} ${appliedTravelers.adults === 1 ? 'adulto' : 'adultos'}`];
-          if (appliedTravelers.children) details.push(`${appliedTravelers.children} ${appliedTravelers.children === 1 ? 'criança' : 'crianças'}`);
-          if (appliedTravelers.babies) details.push(`${appliedTravelers.babies} ${appliedTravelers.babies === 1 ? 'bebê' : 'bebês'}`);
-          details.push(classLabels[appliedClass]);
-          document.getElementById('travelers-detail').textContent = details.join(' · ');
-        }
-        function openTravelerPicker() {
-          draftTravelers = { ...appliedTravelers };
-          travelerClass.value = appliedClass;
-          updateCounterDisplay();
-          travelerPopover.hidden = false;
-          travelerTrigger.setAttribute('aria-expanded', 'true');
-        }
-        function closeTravelerPicker() {
-          travelerPopover.hidden = true;
-          travelerTrigger.setAttribute('aria-expanded', 'false');
-        }
-        function createAgeField(kind, index, min, max, unit) {
-          const field = document.createElement('div');
-          field.className = 'field child-age-field';
-          const label = document.createElement('label');
-          const id = `${kind}-age-${index}`;
-          label.htmlFor = id;
-          label.textContent = `${kind === 'child' ? 'Criança' : 'Bebê'} ${index} (${unit})`;
-          const input = document.createElement('input');
-          input.id = id;
-          input.name = id;
-          input.type = 'number';
-          input.min = String(min);
-          input.max = String(max);
-          input.step = '1';
-          input.inputMode = 'numeric';
-          input.placeholder = `${min} a ${max} ${unit}`;
-          input.required = true;
-          field.append(label, input);
-          return field;
-        }
-        function renderTravelerAges() {
-          childrenAges.replaceChildren();
-          babyAges.replaceChildren();
-          childrenAges.hidden = appliedTravelers.children === 0;
-          babyAges.hidden = appliedTravelers.babies === 0;
-          if (appliedTravelers.children) {
-            const heading = document.createElement('p');
-            heading.className = 'children-heading';
-            heading.textContent = 'Idade de cada criança na data da viagem';
-            const help = document.createElement('p');
-            help.className = 'children-help';
-            help.textContent = 'Informe a idade entre 2 e 11 anos.';
-            const grid = document.createElement('div');
-            grid.className = 'children-ages-grid';
-            for (let index = 1; index <= appliedTravelers.children; index += 1) grid.append(createAgeField('child', index, 2, 11, 'anos'));
-            childrenAges.append(heading, help, grid);
-          }
-          if (appliedTravelers.babies) {
-            const heading = document.createElement('p');
-            heading.className = 'children-heading';
-            heading.textContent = 'Idade de cada bebê na data da viagem';
-            const help = document.createElement('p');
-            help.className = 'children-help';
-            help.textContent = 'Informe a idade em meses (0 a 23 meses).';
-            const grid = document.createElement('div');
-            grid.className = 'children-ages-grid';
-            for (let index = 1; index <= appliedTravelers.babies; index += 1) grid.append(createAgeField('baby', index, 0, 23, 'meses'));
-            babyAges.append(heading, help, grid);
-          }
-        }
-        function setupAirportList(input, list) {
-          const control = input.parentElement;
-          let matches = [];
-          let activeIndex = -1;
-          const close = () => {
-            list.hidden = true;
-            input.setAttribute('aria-expanded', 'false');
-            input.removeAttribute('aria-activedescendant');
-            activeIndex = -1;
-          };
-          const selectMatch = (value) => {
-            input.value = value;
-            close();
-          };
-          const render = () => {
-            const query = normalize(input.value);
-            matches = airports.filter((airport) => !query || normalize(airport).includes(query));
-            list.replaceChildren();
-            activeIndex = -1;
-            if (!matches.length) {
-              const empty = document.createElement('div');
-              empty.className = 'airport-empty';
-              empty.textContent = 'Nenhuma sugestão encontrada. Você pode digitar outro aeroporto.';
-              list.append(empty);
-            } else {
-              matches.forEach((airport, index) => {
-                const option = document.createElement('div');
-                option.id = `${input.id}-option-${index}`;
-                option.className = 'airport-option';
-                option.setAttribute('role', 'option');
-                option.setAttribute('aria-selected', 'false');
-                option.textContent = airport;
-                option.addEventListener('mousedown', (event) => event.preventDefault());
-                option.addEventListener('click', () => selectMatch(airport));
-                list.append(option);
-              });
-            }
-            list.hidden = false;
-            input.setAttribute('aria-expanded', 'true');
-          };
-          const setActive = (index) => {
-            if (!matches.length) return;
-            activeIndex = (index + matches.length) % matches.length;
-            const options = list.querySelectorAll('[role="option"]');
-            options.forEach((option, optionIndex) => option.setAttribute('aria-selected', String(optionIndex === activeIndex)));
-            const active = options[activeIndex];
-            input.setAttribute('aria-activedescendant', active.id);
-            active.scrollIntoView({ block: 'nearest' });
-          };
-          input.addEventListener('focus', render);
-          input.addEventListener('input', render);
-          input.addEventListener('blur', () => window.setTimeout(close, 120));
-          input.addEventListener('keydown', (event) => {
-            if (event.key === 'ArrowDown') {
-              event.preventDefault();
-              if (list.hidden) render();
-              setActive(activeIndex + 1);
-            } else if (event.key === 'ArrowUp') {
-              event.preventDefault();
-              if (list.hidden) render();
-              setActive(activeIndex < 0 ? matches.length - 1 : activeIndex - 1);
-            } else if (event.key === 'Enter' && !list.hidden && activeIndex >= 0) {
-              event.preventDefault();
-              selectMatch(matches[activeIndex]);
-            } else if (event.key === 'Escape') {
-              close();
-            }
-          });
-          document.addEventListener('click', (event) => {
-            if (!control.contains(event.target)) close();
-          });
-        }
+  <!-- PACOTES -->
+  <section id="pacotes">
+    <div class="container">
+      <div class="titulo">
+        <p class="tag">Roteiros selecionados</p>
+        <h2>Pacotes em <em>destaque</em></h2>
+        <p>Valores por pessoa, sujeitos a disponibilidade. Consulte datas e condições.</p>
+      </div>
+      <div class="filtros">
+        <button class="chip ativa" data-filtro="todos">Todos</button>
+        <button class="chip" data-filtro="nacional">Nacionais</button>
+        <button class="chip" data-filtro="internacional">Internacionais</button>
+        <button class="chip" data-filtro="cruzeiro">Cruzeiros</button>
+        <input id="busca-pac" type="search" placeholder="Buscar destino...">
+      </div>
+      <div class="pacotes" id="lista-pacotes"></div>
+    </div>
+  </section>
 
-        setupAirportList(origin, document.getElementById('origin-airports'));
-        setupAirportList(destination, document.getElementById('destination-airports'));
-        travelerTrigger.addEventListener('click', () => {
-          if (travelerPopover.hidden) openTravelerPicker();
-          else closeTravelerPicker();
-        });
-        travelerPopover.addEventListener('click', (event) => {
-          const button = event.target.closest('[data-traveler-kind]');
-          if (!button) return;
-          const kind = button.dataset.travelerKind;
-          const step = Number(button.dataset.travelerStep);
-          draftTravelers[kind] = Math.max(travelerLimits[kind].min, Math.min(travelerLimits[kind].max, draftTravelers[kind] + step));
-          updateCounterDisplay();
-        });
-        document.getElementById('traveler-clear').addEventListener('click', () => {
-          draftTravelers = { adults: 1, children: 0, babies: 0 };
-          travelerClass.value = 'all';
-          updateCounterDisplay();
-        });
-        document.getElementById('traveler-apply').addEventListener('click', () => {
-          Object.assign(appliedTravelers, draftTravelers);
-          appliedClass = travelerClass.value;
-          updateTravelerSummary();
-          renderTravelerAges();
-          closeTravelerPicker();
-          travelerTrigger.focus();
-        });
-        document.addEventListener('keydown', (event) => {
-          if (!travelerPopover.hidden && event.key === 'Escape') {
-            closeTravelerPicker();
-            travelerTrigger.focus();
-          }
-        });
-        document.addEventListener('focusin', (event) => {
-          if (!travelerPicker.contains(event.target)) closeTravelerPicker();
-        });
-        document.addEventListener('click', (event) => {
-          if (!travelerPicker.contains(event.target)) closeTravelerPicker();
-        });
-        tripType.addEventListener('change', updateTripType);
-        departure.addEventListener('change', updateDateLimits);
-        returnDate.addEventListener('change', updateDateLimits);
-        updateDateLimits();
-        updateTripType();
-        updateCounterDisplay();
-        updateTravelerSummary();
-        renderTravelerAges();
+  <section class="passos">
+    <div class="container">
+      <div class="titulo"><p class="tag">Simples assim</p><h2>Como <em>funciona</em></h2></div>
+      <div class="linha">
+        <div class="passo"><div class="n">1</div><h3>Você conta o que procura</h3><p>Preencha a busca ou chame no WhatsApp. Leva menos de um minuto.</p></div>
+        <div class="passo"><div class="n">2</div><h3>Pesquisamos para você</h3><p>Comparamos tarifas, hotéis e pacotes e montamos as melhores opções.</p></div>
+        <div class="passo"><div class="n">3</div><h3>Você escolhe e viaja</h3><p>Fechamos tudo com segurança e acompanhamos até a volta.</p></div>
+      </div>
+    </div>
+  </section>
 
-        function openContactStep(requestType = 'flight', packageTitle = null) {
-          pendingRequestType = requestType;
-          pendingPackageTitle = packageTitle;
-          contactForm.reset();
-          contactStatus.hidden = true;
-          preferredAttendant.value = '';
-          const isPackage = requestType === 'package';
-          document.getElementById('contact-title').textContent = isPackage ? 'Vamos conversar sobre este pacote?' : 'Como podemos falar com você?';
-          document.getElementById('contact-description').textContent = isPackage
-            ? `Informe seu nome e WhatsApp para pedir informações sobre “${packageTitle}”. Vamos gerar um protocolo antes de abrir o WhatsApp.`
-            : 'Informe seu nome e WhatsApp. Vamos registrar seu pedido e gerar um protocolo antes de abrir o WhatsApp.';
-          contactDialog.showModal();
-          window.setTimeout(() => document.getElementById('contact-name').focus(), 0);
-        }
+  <section id="contato">
+    <div class="container contato">
+      <div>
+        <h2>Fale com a gente</h2>
+        <ul>
+          <li>📍 <strong>Endereço:</strong> [endereço da agência], Indaiatuba, SP</li>
+          <li>✉️ <strong>E-mail:</strong> contato@alexiatravel.com.br</li>
+          <li>🕘 <strong>Atendimento:</strong> seg. a sex., 9h às 18h</li>
+          <li>📸 <strong>Instagram:</strong> @alexiatravel</li>
+        </ul>
+      </div>
+      <div class="lista-atend" id="lista-atend"></div>
+    </div>
+  </section>
+</main>
 
-        function normalizeCustomerPhone(value) {
-          const raw = String(value || '').trim();
-          const hasPlus = raw.startsWith('+');
-          let digits = raw.replace(/\D/g, '');
-          if (digits.startsWith('00')) digits = digits.slice(2);
-          if (!hasPlus && (digits.length === 10 || digits.length === 11)) digits = `55${digits}`;
-          if (!hasPlus && (digits.length === 12 || digits.length === 13) && digits.startsWith('55')) return `+${digits}`;
-          if (digits.length >= 8 && digits.length <= 15) return `+${digits}`;
-          return '';
-        }
+<footer>
+  <p><strong>alexia travel</strong> · Agência de viagens em Indaiatuba/SP</p>
+  <p>© <span id="ano"></span> Alexia Travel. Todos os direitos reservados.</p>
+  <p style="font-size:.8rem;opacity:.7;margin-top:6px">Fotos ilustrativas: Unsplash.</p>
+</footer>
 
-        function loadDistributionOptions() {
-          if (distributionLoaded) return Promise.resolve(true);
-          if (distributionRequest) return distributionRequest;
-          distributionRequest = (async () => {
-            try {
-              const { data, error } = await supabase.rpc('get_public_distribution_options');
-              if (error || !data) return false;
-              distributionMode = data.distribution_mode || 'round_robin';
-              distributionOptions = Array.isArray(data.attendants) ? data.attendants : [];
-              preferredAttendant.replaceChildren();
-              if (distributionMode === 'customer_choice' && distributionOptions.length) {
-                preferredAttendant.add(new Option('Selecione um atendente', ''));
-                distributionOptions.forEach((attendant) => preferredAttendant.add(new Option(attendant.name, attendant.id)));
-                preferredAttendant.required = true;
-                preferredAttendantField.hidden = false;
-              } else {
-                preferredAttendant.required = false;
-                preferredAttendantField.hidden = true;
-              }
-              distributionLoaded = true;
-              return true;
-            } catch {
-              preferredAttendant.required = false;
-              preferredAttendantField.hidden = true;
-              return false;
-            } finally {
-              distributionRequest = null;
-            }
-          })();
-          return distributionRequest;
-        }
+<a class="wpp-flutuante" href="#" data-wpp="Olá! Vim pelo site da Alexia Travel e gostaria de ajuda com uma viagem." aria-label="WhatsApp">💬</a>
 
-        function buildFlightRequest() {
-          const childAges = Array.from(childrenAges.querySelectorAll('input')).map((input) => Number(input.value));
-          const infantAges = Array.from(babyAges.querySelectorAll('input')).map((input) => Number(input.value));
-          return {
-            p_request_type: 'flight',
-            p_origin: origin.value.trim(),
-            p_destination: destination.value.trim(),
-            p_trip_type: tripType.value === 'roundtrip' ? 'round_trip' : 'one_way',
-            p_departure_date: departure.value,
-            p_return_date: tripType.value === 'roundtrip' ? returnDate.value : null,
-            p_adults: Number(appliedTravelers.adults),
-            p_child_ages: childAges,
-            p_baby_ages: infantAges,
-            p_travel_class: appliedClass === 'all' ? 'any' : appliedClass,
-            p_customer_notes: document.getElementById('notes').value.trim() || null,
-            p_package_title: null
-          };
-        }
+<!-- escolha de atendente (aparece só com 2+ números no modo "escolher") -->
+<div class="modal" id="modal-atend" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
+  <div class="caixa">
+    <h3 id="modal-titulo">Com quem quer falar?</h3>
+    <p>Escolha quem vai te atender no WhatsApp.</p>
+    <div class="opcoes" id="modal-opcoes"></div>
+    <button class="fechar" type="button" id="modal-fechar">Cancelar</button>
+  </div>
+</div>
 
-        function formatFlightMessage(request, customerName, customerPhone, protocol, assignedName) {
-          return [
-            'Olá, Alexia Travel! Gostaria de pedir uma cotação de passagem aérea nacional.',
-            '',
-            `Protocolo: ${protocol}`,
-            `Cliente: ${customerName}`,
-            `WhatsApp: ${customerPhone}`,
-            `Atendimento: ${assignedName}`,
-            '',
-            `Origem: ${origin.value.trim()}`,
-            `Destino: ${destination.value.trim()}`,
-            `Viagem: ${formatDate(departure.value)}${tripType.value === 'roundtrip' ? ` a ${formatDate(returnDate.value)}` : ' (somente ida)'}`,
-            `Adultos (acima de 12 anos): ${appliedTravelers.adults}`,
-            `Crianças (2 a 11 anos): ${request.p_child_ages.length}${request.p_child_ages.length ? ` (idades: ${request.p_child_ages.join(', ')} anos)` : ''}`,
-            `Bebês (0 a 23 meses): ${request.p_baby_ages.length}${request.p_baby_ages.length ? ` (idades: ${request.p_baby_ages.join(', ')} meses)` : ''}`,
-            `Classe desejada: ${classLabels[appliedClass]}`,
-            ...(request.p_customer_notes ? [`Observações: ${request.p_customer_notes}`] : []),
-            '',
-            'Pedido registrado pelo site alexiatravel.com.br. Para concluir, toque em enviar nesta conversa.'
-          ].join('\n');
-        }
+<datalist id="cidades">
+  <option value="Campinas (VCP)"><option value="São Paulo - Guarulhos (GRU)"><option value="São Paulo - Congonhas (CGH)">
+  <option value="Rio de Janeiro (GIG)"><option value="Salvador (SSA)"><option value="Maceió (MCZ)"><option value="Recife (REC)">
+  <option value="Fortaleza (FOR)"><option value="Natal (NAT)"><option value="Porto Seguro (BPS)"><option value="Florianópolis (FLN)">
+  <option value="Foz do Iguaçu (IGU)"><option value="Gramado / Porto Alegre (POA)"><option value="Orlando (MCO)"><option value="Miami (MIA)">
+  <option value="Lisboa (LIS)"><option value="Paris (CDG)"><option value="Roma (FCO)"><option value="Buenos Aires (EZE)"><option value="Santiago (SCL)">
+  <option value="Cancún (CUN)"><option value="Punta Cana (PUJ)">
+</datalist>
 
-        function formatPackageMessage(customerName, customerPhone, protocol, assignedName) {
-          return [
-            'Olá, Alexia Travel! Gostaria de receber informações sobre um pacote de viagem.',
-            '',
-            `Protocolo: ${protocol}`,
-            `Cliente: ${customerName}`,
-            `WhatsApp: ${customerPhone}`,
-            `Atendimento: ${assignedName}`,
-            `Pacote de interesse: ${pendingPackageTitle}`,
-            '',
-            'Pedido registrado pelo site alexiatravel.com.br. Para concluir, toque em enviar nesta conversa.'
-          ].join('\n');
-        }
+<script>
+/* =====================================================================
+   CONFIGURAÇÃO (editar só aqui)
+   ===================================================================== */
 
-        async function submitContact(event) {
-          event.preventDefault();
-          if (!contactForm.reportValidity()) return;
-          const distributionReady = await loadDistributionOptions();
-          if (!distributionReady) {
-            contactStatus.textContent = 'Não foi possível carregar a configuração de atendimento. Tente novamente; seu pedido ainda não foi gravado.';
-            contactStatus.hidden = false;
-            return;
-          }
-          if (!contactForm.reportValidity()) return;
-          const customerPhone = normalizeCustomerPhone(document.getElementById('contact-whatsapp').value);
-          const phoneInput = document.getElementById('contact-whatsapp');
-          phoneInput.setCustomValidity(customerPhone ? '' : 'Informe um WhatsApp válido com DDD e código do país.');
-          if (!customerPhone) { phoneInput.reportValidity(); return; }
+/* 1) NÚMEROS DE WHATSAPP PARA COTAÇÃO
+   Para ADICIONAR um número: copie uma linha {...}, cole abaixo e troque os dados.
+   Para REMOVER: apague a linha. Pode ter quantos quiser.
+     nome   = como aparece para o cliente
+     numero = 55 + DDD + número, só dígitos (ex.: 5519991234567)
+     exibir = como o número aparece escrito na página
+     funcao = (opcional) texto pequeno abaixo do nome, ex.: 'Passagens'           */
+var ATENDENTES = [
+  {nome:'Alexia',   numero:'551990143009', exibir:'(19) 9 99014-3009', funcao:'Atendimento geral'},
+  {nome:'Atendente 2', numero:'551990143009', exibir:'(19) 9 9014-3009', funcao:'Passagens e pacotes'}
+];
 
-          const customerName = document.getElementById('contact-name').value.trim();
-          const request = pendingRequestType === 'flight' ? buildFlightRequest() : {
-            p_request_type: 'package',
-            p_origin: null,
-            p_destination: null,
-            p_trip_type: 'one_way',
-            p_departure_date: null,
-            p_return_date: null,
-            p_adults: 1,
-            p_child_ages: [],
-            p_baby_ages: [],
-            p_travel_class: 'any',
-            p_customer_notes: null,
-            p_package_title: pendingPackageTitle
-          };
-          const popup = window.open('about:blank', '_blank');
-          contactSubmit.disabled = true;
-          contactSubmit.textContent = 'Registrando pedido…';
-          status.hidden = true;
-          fallback.hidden = true;
+/* 2) COMO DISTRIBUIR OS PEDIDOS (vale quando há 2 ou mais números)
+   'cliente'  = o cliente escolhe quem vai atender (lista no formulário e nos botões)
+   'rodizio'  = o site alterna sozinho entre os números, um por pedido
+   Dica: no modo 'cliente' ele ainda pode deixar em "Qualquer atendente" (rodízio). */
+var MODO = 'cliente';
 
-          try {
-            const { data, error } = await supabase.rpc('create_public_service_request', {
-              ...request,
-              p_customer_name: customerName,
-              p_customer_whatsapp: customerPhone,
-              p_preferred_staff_id: distributionMode === 'customer_choice' ? (preferredAttendant.value || null) : null
-            });
-            if (error) throw error;
-            if (!data?.protocol_code || !data?.whatsapp) throw new Error('O protocolo não foi retornado.');
-            const message = pendingRequestType === 'flight'
-              ? formatFlightMessage(request, customerName, customerPhone, data.protocol_code, data.assigned_name)
-              : formatPackageMessage(customerName, customerPhone, data.protocol_code, data.assigned_name);
-            const waUrl = `https://wa.me/${String(data.whatsapp).replace(/\D/g, '')}?text=${encodeURIComponent(message)}`;
-            if (popup) popup.location.href = waUrl;
-            fallback.href = waUrl;
-            fallback.textContent = `Abrir WhatsApp com o protocolo ${data.protocol_code}`;
-            fallback.hidden = false;
-            contactDialog.close();
-            status.textContent = `Pedido registrado com o protocolo ${data.protocol_code} e direcionado para ${data.assigned_name}. No WhatsApp, revise a mensagem e toque em enviar para concluir.`;
-            status.hidden = false;
-            if (popup) fallback.hidden = true;
-          } catch (error) {
-            if (popup) popup.close();
-            contactStatus.textContent = 'Não foi possível registrar seu pedido agora. Tente novamente em instantes; o WhatsApp só será aberto após a geração do protocolo.';
-            contactStatus.hidden = false;
-          } finally {
-            contactSubmit.disabled = false;
-            contactSubmit.innerHTML = '<span class="wa-icon" aria-hidden="true">◉</span> Registrar e continuar pelo WhatsApp <span aria-hidden="true">↗</span>';
-          }
-        }
+/* 3) Pacotes: para adicionar/editar, basta mexer nesta lista.
+   ATENÇÃO: os valores abaixo são apenas EXEMPLOS de demonstração. */
+var PACOTES = [
+  {titulo:'Maceió: Praias e piscinas naturais', tipo:'nacional', destino:'Maceió, AL', noites:6,
+   img:'https://unsplash.com/photos/E_fQwwT3NFU/download?force=true&w=800', inclui:['Aéreo ida e volta','Hotel com café da manhã','Traslados']},
+  {titulo:'Orlando: Parques e compras', tipo:'internacional', destino:'Orlando, EUA', noites:8, 
+   img:'https://unsplash.com/photos/2-JT6t_0lTc/download?force=true&w=800', inclui:['Aéreo ida e volta','Hotel','Seguro viagem']},
+  {titulo:'Lisboa: Clássico europeu', tipo:'internacional', destino:'Lisboa, Portugal', noites:7,
+   img:'https://unsplash.com/photos/v4aOz5uysU4/download?force=true&w=800', inclui:['Aéreo ida e volta','Hotel central','City tour']},
+  {titulo:'Cruzeiro pela costa brasileira', tipo:'cruzeiro', destino:'Santos e litoral', noites:7, 
+   img:'https://unsplash.com/photos/tthKs4A7XMY/download?force=true&w=800', inclui:['Cabine','Pensão completa','Entretenimento a bordo']},
+  {titulo:'Miami e Key West', tipo:'internacional', destino:'Flórida, EUA', noites:7, 
+   img:'https://unsplash.com/photos/Rnzvb0QJ9LY/download?force=true&w=800', inclui:['Aéreo ida e volta','Hotel','Seguro viagem']},
+  {titulo:'Praias do Nordeste: Ipioca', tipo:'nacional', destino:'Maceió, AL', noites:5,
+   img:'https://unsplash.com/photos/DLhBbEOz1uw/download?force=true&w=800', inclui:['Aéreo ida e volta','Pousada','Traslados']}
+];
+/* ===================================================================== */
 
-        document.getElementById('contact-close').addEventListener('click', () => contactDialog.close());
-        contactDialog.addEventListener('click', (event) => { if (event.target === contactDialog) contactDialog.close(); });
-        contactForm.addEventListener('submit', submitContact);
-        document.getElementById('contact-whatsapp').addEventListener('input', (event) => event.target.setCustomValidity(''));
-        document.querySelectorAll('.package-button').forEach((button) => {
-          button.addEventListener('click', () => openContactStep('package', button.dataset.packageTitle));
-        });
-        loadDistributionOptions();
+function $(id){ return document.getElementById(id); }
+function fmtData(v){ if(!v) return ''; var p=v.split('-'); return p[2]+'/'+p[1]+'/'+p[0]; }
+function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+function waLink(numero, texto){ return 'https://wa.me/' + numero + '?text=' + encodeURIComponent(texto); }
 
-        form.addEventListener('submit', (event) => {
-          event.preventDefault();
-          status.hidden = true;
-          fallback.hidden = true;
-          destination.setCustomValidity('');
-          if (!form.reportValidity()) return;
-          if (normalize(origin.value) === normalize(destination.value)) {
-            destination.setCustomValidity('Informe um destino diferente da origem.');
-            destination.reportValidity();
-            return;
-          }
-          openContactStep('flight');
-        });
-      })();
-    </script>
-  </body>
+/* ---- números / rodízio ---- */
+var LISTA = ATENDENTES.filter(function(a){ return a && /^\d{10,15}$/.test(String(a.numero)); });
+if(!LISTA.length){ LISTA = [{nome:'Alexia Travel', numero:'5519999999999', exibir:'(19) 9 9999-9999'}]; }
+var MULTI = LISTA.length > 1;
+
+function guardar(k,v){ try{ localStorage.setItem(k,v); }catch(e){} }
+function ler(k){ try{ return localStorage.getItem(k); }catch(e){ return null; } }
+function proximoRodizio(){
+  var i = parseInt(ler('alexia_rodizio'),10);
+  i = isNaN(i) ? Math.floor(Math.random()*LISTA.length) : (i+1) % LISTA.length;
+  guardar('alexia_rodizio', i);
+  return LISTA[i];
+}
+/* escolha: 'auto' (rodízio) ou índice do atendente */
+function atendente(escolha){
+  if(!MULTI) return LISTA[0];
+  if(escolha !== undefined && escolha !== '' && escolha !== 'auto' && LISTA[+escolha]) return LISTA[+escolha];
+  return proximoRodizio();
+}
+function abrir(texto, escolha){
+  var a = atendente(escolha);
+  window.open(waLink(a.numero, texto), '_blank', 'noopener');
+}
+
+/* ---- seletor nos formulários ---- */
+document.querySelectorAll('.sel-atend').forEach(function(sel){
+  if(!MULTI || MODO !== 'cliente'){ sel.closest('.atend-box').classList.add('oculto'); return; }
+  sel.innerHTML = '<option value="auto">Qualquer atendente</option>' +
+    LISTA.map(function(a,i){ return '<option value="'+i+'">'+esc(a.nome)+'</option>'; }).join('');
+});
+
+/* ---- botões gerais de WhatsApp (menu, flutuante, "sem resultado") ---- */
+var modal = $('modal-atend'), modalTexto = '';
+function chamar(texto){
+  if(MULTI && MODO === 'cliente'){
+    modalTexto = texto;
+    $('modal-opcoes').innerHTML = LISTA.map(function(a,i){
+      return '<button type="button" data-i="'+i+'">'+esc(a.nome)+'<small>'+esc(a.funcao||a.exibir)+'</small></button>';
+    }).join('');
+    modal.classList.add('aberto');
+  } else { abrir(texto); }
+}
+$('modal-opcoes').addEventListener('click', function(e){
+  var b = e.target.closest('button[data-i]'); if(!b) return;
+  modal.classList.remove('aberto'); abrir(modalTexto, b.dataset.i);
+});
+$('modal-fechar').addEventListener('click', function(){ modal.classList.remove('aberto'); });
+modal.addEventListener('click', function(e){ if(e.target===modal) modal.classList.remove('aberto'); });
+document.addEventListener('keydown', function(e){ if(e.key==='Escape') modal.classList.remove('aberto'); });
+document.addEventListener('click', function(e){
+  var a = e.target.closest('[data-wpp]'); if(!a) return;
+  e.preventDefault(); chamar(a.getAttribute('data-wpp'));
+});
+
+/* ---- lista de números na seção Contato ---- */
+$('lista-atend').innerHTML = LISTA.map(function(a){
+  return '<a class="btn" target="_blank" rel="noopener" href="' + waLink(a.numero,'Olá! Vim pelo site da Alexia Travel e gostaria de ajuda com uma viagem.') + '">' +
+    '💬 ' + esc(a.nome) + (a.funcao ? ' · ' + esc(a.funcao) : '') + '<small>' + esc(a.exibir) + '</small></a>';
+}).join('');
+
+$('ano').textContent = new Date().getFullYear();
+
+/* selects de pessoas */
+function preencher(id, de, ate){ var s=$(id); for(var i=de;i<=ate;i++){ var o=document.createElement('option'); o.value=i; o.textContent=i; s.appendChild(o);} }
+preencher('adultos',1,9); preencher('criancas',0,6); preencher('o-adultos',1,9); preencher('o-criancas',0,6);
+$('adultos').value = 2; $('o-adultos').value = 2;
+
+/* datas mínimas */
+var hoje = new Date(); hoje.setMinutes(hoje.getMinutes()-hoje.getTimezoneOffset());
+var iso = hoje.toISOString().slice(0,10);
+$('ida').min = iso; $('volta').min = iso;
+$('ida').addEventListener('change', function(){ $('volta').min = this.value || iso; });
+
+/* ida e volta / somente ida */
+document.querySelectorAll('input[name=trecho]').forEach(function(r){
+  r.addEventListener('change', function(){
+    var soIda = document.querySelector('input[name=trecho]:checked').value === 'somente ida';
+    $('box-volta').style.display = soIda ? 'none' : '';
+  });
+});
+
+/* abas */
+function mostrarAba(nome){
+  document.querySelectorAll('.tab[data-tab]').forEach(function(t){ t.classList.toggle('ativa', t.dataset.tab===nome); });
+  document.querySelectorAll('.painel').forEach(function(p){ p.classList.toggle('ativo', p.id==='painel-'+nome); });
+}
+document.querySelectorAll('[data-tab]').forEach(function(el){
+  el.addEventListener('click', function(){ mostrarAba(el.dataset.tab); });
+});
+
+/* envio: passagens */
+function enviarPassagem(e){
+  e.preventDefault();
+  var soIda = document.querySelector('input[name=trecho]:checked').value === 'somente ida';
+  if(!soIda && $('volta').value && $('volta').value < $('ida').value){ alert('A data de volta precisa ser depois da ida.'); return; }
+  var t = 'Olá! Gostaria de cotar passagem aérea.\n' +
+    '✈️ ' + $('origem').value + ' → ' + $('destino').value + '\n' +
+    '📅 Ida: ' + fmtData($('ida').value) + (soIda ? ' (somente ida)' : ($('volta').value ? ' | Volta: ' + fmtData($('volta').value) : '')) + '\n' +
+    '👥 ' + $('adultos').value + ' adulto(s), ' + $('criancas').value + ' criança(s)\n' +
+    '💺 Classe: ' + $('classe').value + '\n' +
+    ($('flex').checked ? '🔁 Datas flexíveis (±3 dias)\n' : '') +
+    '🙋 ' + $('nome-p').value + ($('tel-p').value ? ' - ' + $('tel-p').value : '');
+  abrir(t, MODO==='cliente' ? $('atend-p').value : 'auto');
+}
+
+/* envio: orçamento */
+function enviarOrcamento(e){
+  e.preventDefault();
+  var t = 'Olá! Gostaria de um orçamento.\n' +
+    '🧭 Tipo: ' + $('o-tipo').value + '\n' +
+    '📍 Destino: ' + $('o-destino').value + '\n' +
+    ($('o-quando').value ? '📅 Quando: ' + $('o-quando').value + '\n' : '') +
+    ($('o-noites').value ? '🌙 Noites: ' + $('o-noites').value + '\n' : '') +
+    '👥 ' + $('o-adultos').value + ' adulto(s), ' + $('o-criancas').value + ' criança(s)\n' +
+    ($('o-valor').value ? '💰 Orçamento: ' + $('o-valor').value + '\n' : '') +
+    ($('o-obs').value ? '📝 ' + $('o-obs').value + '\n' : '') +
+    '🙋 ' + $('o-nome').value + ($('o-tel').value ? ' - ' + $('o-tel').value : '');
+  abrir(t, MODO==='cliente' ? $('atend-o').value : 'auto');
+}
+
+/* catálogo de pacotes */
+var rotulos = {nacional:'Nacional', internacional:'Internacional', cruzeiro:'Cruzeiro'};
+var filtroAtual = 'todos';
+function desenhar(){
+  var q = $('busca-pac').value.trim().toLowerCase();
+  var lista = PACOTES.filter(function(p){
+    return (filtroAtual==='todos' || p.tipo===filtroAtual) &&
+      (!q || (p.titulo+' '+p.destino).toLowerCase().indexOf(q) > -1);
+  });
+  var html = lista.map(function(p){
+    var msg = 'Olá! Tenho interesse no pacote "' + p.titulo + '" (' + p.destino + ', ' + p.noites + ' noites). Pode me passar datas e condições?';
+    return '<article class="pac">' +
+      '<div class="foto" style="background-image:url(\'' + p.img + '\')"><span class="selo">' + rotulos[p.tipo] + '</span></div>' +
+      '<div class="corpo"><h3>' + esc(p.titulo) + '</h3>' +
+      '<div class="meta">📍 ' + esc(p.destino) + ' · ' + p.noites + ' noites</div>' +
+      '<ul>' + p.inclui.map(function(x){ return '<li>' + esc(x) + '</li>'; }).join('') + '</ul>' +
+      '<div class="preco"><small>a partir de, por pessoa</small><strong>R$ ' + p.preco + '</strong></div>' +
+      '<a class="btn btn-terra" href="#" data-wpp="' + esc(msg) + '">Tenho interesse</a>' +
+      '</div></article>';
+  }).join('');
+  $('lista-pacotes').innerHTML = html || '<p class="vazio">Nenhum pacote encontrado. <a style="color:var(--terra-esc);font-weight:700" href="#" data-wpp="Olá! Não encontrei o pacote que procuro no site. Podem me ajudar?">Fale com a gente</a> e montamos um roteiro para você.</p>';
+}
+document.querySelectorAll('.chip').forEach(function(c){
+  c.addEventListener('click', function(){
+    document.querySelectorAll('.chip').forEach(function(x){ x.classList.remove('ativa'); });
+    c.classList.add('ativa'); filtroAtual = c.dataset.filtro; desenhar();
+  });
+});
+$('busca-pac').addEventListener('input', desenhar);
+desenhar();
+
+/* abre a aba certa se vier por #orcamento */
+if(location.hash === '#orcamento'){ mostrarAba('orcamento'); $('busca').scrollIntoView(); }
+</script>
+</body>
 </html>
